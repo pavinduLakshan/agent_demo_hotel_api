@@ -311,7 +311,7 @@ async def get_room_details(room_id: int):
 
 
 async def get_claims(request: Request):
-    jwt_token = request.headers.get("X-JWT-Assertion")
+    jwt_token = request.headers.get("Authorization")
 
     if not jwt_token:
         raise HTTPException(status_code=401, detail="Missing JWT Assertion")
